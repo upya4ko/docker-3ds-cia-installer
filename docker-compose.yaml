@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  nginx:
+    build: nginx
+    container_name: "cia-installer"
+    restart: always
+    network_mode: "host"
+    volumes:
+      - "~/cia:/app/3ds/cia"
+    deploy:
+      replicas: 1
+
